@@ -5,18 +5,18 @@ import java.util.Scanner;
 public class UserRegistration {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter your first name: ");
-        String firstName = scanner.nextLine();
+        System.out.print("Enter your last name: ");
+        String lastName = scanner.nextLine();
 
         // Define regex pattern for first name validation
         Pattern pattern = Pattern.compile("^[A-Z][a-z]{2,}$");
 
         // Match user input against regex pattern
-        Matcher matcher = pattern.matcher(firstName);
+        Matcher matcher = pattern.matcher(lastName);
         if (matcher.matches()) {
-            System.out.println("Valid first name");
+            System.out.println("Valid last name");
         } else {
-            System.out.println("Invalid first name");
+            System.out.println("Invalid last name");
         }
     }
 }
