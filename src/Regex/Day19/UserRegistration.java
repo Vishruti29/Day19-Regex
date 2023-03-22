@@ -5,18 +5,16 @@ import java.util.Scanner;
 public class UserRegistration {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter your email address : ");
-        String email = scanner.nextLine();
+        System.out.print("Enter your mobile number : ");
+        String mobileNumber = scanner.nextLine();
 
-        // Define regex pattern for first name validation
-        Pattern pattern = Pattern.compile("^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$");
-
+        Pattern pattern = Pattern.compile("^\\d{2} \\d{10}$");
         // Match user input against regex pattern
-        Matcher matcher = pattern.matcher(email);
+        Matcher matcher = pattern.matcher(mobileNumber);
         if (matcher.matches()) {
-            System.out.println("Valid email address");
+            System.out.println("Valid mobile number");
         } else {
-            System.out.println("Invalid email address");
+            System.out.println("Invalid mobile number");
         }
     }
 }
